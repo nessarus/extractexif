@@ -25,10 +25,10 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
 public class LongLat {
-	public static String saveImage(String imageUrl, String path) throws IOException {
+	public static String saveImage(String imageUrl) throws IOException {
 		URL url = new URL(imageUrl);
 		String fileName = url.getFile();
-		String destName = path + fileName.substring(fileName.lastIndexOf("/") + 1);
+		String destName = fileName.substring(fileName.lastIndexOf("/") + 1);
 		System.out.println(destName);
 
 		InputStream input = url.openStream();
@@ -71,10 +71,10 @@ public class LongLat {
 		return ret;
 	}
 
-	public static ArrayList<String[]> exifExtract(ArrayList<String> urls, String path) throws ImageProcessingException, IOException {
+	public static ArrayList<String[]> exifExtract(ArrayList<String> urls, String parentPath) throws ImageProcessingException, IOException {
 		ArrayList<String[]> ret = new ArrayList<String[]>();
 		for (int i = 0; i < urls.size(); i++) {
-			File file = new File(saveImage(urls.get(i), path));
+			File file = new File(parentPath, saveImage(urls.get(i)));
 
 			Metadata metadata = ImageMetadataReader.readMetadata(file);
 
@@ -177,7 +177,7 @@ public class LongLat {
 			System.out.println(urls.get(i));
 		}
 
-		ArrayList<String[]> locations = exifExtract(urls, csvPath);
+		ArrayList<String[]> locations = exifExtract(urls, csvParentPath);
 		for (int i = 0; i < urls.size(); i++) {
 			System.out.println(locations.get(i)[0] + ", " + locations.get(i)[1]);
 		}

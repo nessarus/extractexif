@@ -1,4 +1,4 @@
-# CITS3200_Project_Honey_Bee_Flora
+# extractexif
 CITS3200's 2018 Team N is developing software for CRCHBP's citizen science project, Honey bee flora of Western Australia Project. The software will assist in monitoring and collating information on honey bee foraging to help beekeepers optimise the health of their bees, and quality of honey product.
 
 extractexif is a program that extracts the geolocation from photos from URLs in a CSV file. The CSV file must be in this project’s CSV downloaded format. Extracted data is placed into a new CSV file.

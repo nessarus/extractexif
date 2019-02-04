@@ -3,7 +3,7 @@ extractexif is a program that extracts the geolocation from photos from URLs in 
 extractexif may be downloaded from this link: https://drive.google.com/file/d/1CQKWisF07k3VgfCaG-i2vOqptGQnKE5t/view 
 
 ## The CRC website
-The website we wrote to collect information on bee activity.
+extractexif is assisting the CRC's citizen science project in collecting vital information on bee activity from volunteer-generated data.
 
 http://www.crchoneybeeproducts.com/beefloraspottercover/
 
